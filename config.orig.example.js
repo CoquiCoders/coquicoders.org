@@ -8,21 +8,21 @@ config = {
     // ### Development **(default)**
     development: {
         // The url to use when providing links to the site, E.g. in RSS and email.
-        url: 'coquicoders.org',
+        url: 'http://my-ghost-blog.com',
 
         // Example mail config
         // Visit http://docs.ghost.org/mail for instructions
         // ```
-          mail: {
-              transport: 'SMTP',
-              options: {
-                  service: 'Mailgun',
-                  auth: {
-                      user: 'postmaster@coquicoders.org', // Super secret username
-                      pass: ''  // Super secret password
-                  }
-              }
-          },
+        //  mail: {
+        //      transport: 'SMTP',
+        //      options: {
+        //          service: 'Mailgun',
+        //          auth: {
+        //              user: '', // mailgun username
+        //              pass: ''  // mailgun password
+        //          }
+        //      }
+        //  },
         // ```
 
         database: {
@@ -36,7 +36,7 @@ config = {
             // Host to be passed to node's `net.Server#listen()`
             host: '127.0.0.1',
             // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
-            port: '2378'
+            port: '2368'
         }
     },
 
@@ -44,17 +44,8 @@ config = {
     // When running Ghost in the wild, use the production environment
     // Configure your URL and mail settings here
     production: {
-        url: 'http://coquicoders.org',
-        mail: {
-          transport: 'SMTP',
-          options: {
-	    service: 'Mailgun',
-	    auth: {
-	        user: 'postmaster@coquicoders.org', // Super secret username
-	        pass: ''  // Super secret password
-	    }
-          }
-        },
+        url: 'http://my-ghost-blog.com',
+        mail: {},
         database: {
             client: 'sqlite3',
             connection: {
@@ -63,9 +54,10 @@ config = {
             debug: false
         },
         server: {
+            // Host to be passed to node's `net.Server#listen()`
             host: '127.0.0.1',
             // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
-            port: '2378'
+            port: '2368'
         }
     },
 
@@ -89,9 +81,9 @@ config = {
     },
 
     // ### Travis
-    // Automated testing run through Github
-    travis: {
-        url: 'http://127.0.0.1:2368',
+    // Automated testing run through GitHub
+    'travis-sqlite3': {
+        url: 'http://127.0.0.1:2369',
         database: {
             client: 'sqlite3',
             connection: {
@@ -100,7 +92,47 @@ config = {
         },
         server: {
             host: '127.0.0.1',
-            port: '2368'
+            port: '2369'
+        }
+    },
+
+    // ### Travis
+    // Automated testing run through GitHub
+    'travis-mysql': {
+        url: 'http://127.0.0.1:2369',
+        database: {
+            client: 'mysql',
+            connection: {
+                host     : '127.0.0.1',
+                user     : 'travis',
+                password : '',
+                database : 'ghost_travis',
+                charset  : 'utf8'
+            }
+        },
+        server: {
+            host: '127.0.0.1',
+            port: '2369'
+        }
+    },
+
+    // ### Travis
+    // Automated testing run through GitHub
+    'travis-pg': {
+        url: 'http://127.0.0.1:2369',
+        database: {
+            client: 'pg',
+            connection: {
+                host     : '127.0.0.1',
+                user     : 'postgres',
+                password : '',
+                database : 'ghost_travis',
+                charset  : 'utf8'
+            }
+        },
+        server: {
+            host: '127.0.0.1',
+            port: '2369'
         }
     }
 };
