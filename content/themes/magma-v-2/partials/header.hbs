@@ -1,0 +1,13 @@
+	<div class="site-head">
+		{{#if @blog.logo}}
+		<a href="{{@blog.url}}" class="logo">
+			<img src="{{@blog.logo}}" alt="Blog Logo">
+		</a>
+		{{else}}
+		<a href="{{@blog.url}}" class="logo">
+			<img src="{{@blog.url}}/assets/images/logo.png" alt="Blog Logo">
+		</a>
+		{{/if}}
+		<div class="blog-title"><h1><a href="{{@blog.url}}">{{@blog.title}}</a></h1></div>
+		<div class="blog-tagline">{{@blog.description}}</div>
+	</div>

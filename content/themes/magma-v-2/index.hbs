@@ -1,0 +1,30 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+    
+	<section class="main-section">
+		{{! Each post will be output using this markup }}
+    		{{#foreach posts}}
+		<article class="post {{post_class}}">
+			<a href="{{url}}"><div class="append-feature-media"></div></a>
+			<div class="post-content">
+				<span class="post-meta">{{date format="DD MMM YYYY"}}</span>{{#if tags}}
+				<span class="catagory">On {{tags separator=" , "}}</span>
+				{{/if}}
+				<h1 class="post-title"><a href="{{url}}">{{{title}}}</a></h1>
+				{{! post excerpt}}
+				{{content words="50"}}
+				<span class="more-link"><a href="{{url}}">Continue reading →</a></span>
+				<hr>
+			</div>
+
+		</article>
+			{{/foreach}}
+
+		<div class="navigation">
+			{{!! After all the posts, we have the previous/next pagination links }}
+			{{pagination}}
+		</div>
+
+	</section>

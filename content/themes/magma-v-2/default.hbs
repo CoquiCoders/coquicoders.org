@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+	{{! Document Settings }}
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    {{! Page Meta }}
+	<title>{{meta_title}}</title>
+	<meta name="description" content="{{meta_description}}" />
+	<meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- apple touh icon -->
+	<link rel=”apple-touch-icon” sizes=”114×114″ href=”/assets/images/touch-icon-114×114.png” />
+	<link rel=”apple-touch-icon” sizes=”72×72″ href=”/assets/images/touch-icon-72×72.png” />
+	<link rel=”apple-touch-icon” href=”/assets/images/touch-icon-iphone.png” />
+
+	{{! Styles'n'Scripts }}
+	<!-- calling css files below -->
+	<link rel="stylesheet" href="/assets/css/style.css">
+	<!-- google font link below -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+	<!-- scripts links below -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="/assets/js/modernizr-2.7.0.js"></script>
+	
+	<script src="/assets/js/feature.js"></script>
+	{{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+</head>
+<body class="fade-in pagecontent {{body_class}}">
+	 <header>
+		{{> header}}
+		{{> nav}}
+	</header>
+	{{! Everything else gets inserted here }}
+    {{{body}}}
+	
+	{{! footer template call}}
+	{{> footer}}
+{{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+	
+<!-- fitvid calling -->
+<script src="/assets/js/jquery.fitvids.js"></script>
+
+	<script>
+
+  $(document).ready(function(){
+  	  $(".post").each(function() {
+    	var thiseliment = $(this);
+    	$(this).find('.feature-media').appendTo($(this).find('.append-feature-media'));
+    	console.log('foo');
+    });
+    // Target your .container, .wrapper, .post, etc.
+    $(".feature-media").fitVids();
+  });
+</script>
+
+</body>
+</html>
