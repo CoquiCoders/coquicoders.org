@@ -25,10 +25,21 @@
 	<!-- scripts links below -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="/assets/js/modernizr-2.7.0.js"></script>
-	
+
 	<script src="/assets/js/feature.js"></script>
 	{{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-47429110-1', 'coquicoders.org');
+  ga('send', 'pageview');
+
+</script>
 </head>
 <body class="fade-in pagecontent {{body_class}}">
 	 <header>
@@ -37,12 +48,12 @@
 	</header>
 	{{! Everything else gets inserted here }}
     {{{body}}}
-	
+
 	{{! footer template call}}
 	{{> footer}}
 {{! Ghost outputs important scripts and data with this tag }}
     {{ghost_foot}}
-	
+
 <!-- fitvid calling -->
 <script src="/assets/js/jquery.fitvids.js"></script>
 
