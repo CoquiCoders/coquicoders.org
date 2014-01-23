@@ -1,0 +1,27 @@
+<!-- starting header -->
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+   
+	<section class="main-section">
+		{{! Each post will be output using this markup }}
+    		{{#post}}
+		<article class="post {{post_class}}">
+			<div class="append-feature-media"></div>
+			<div class="post-content">
+				<h1 class="post-title">{{{title}}}</h1>
+				{{! full post}}
+				{{content}}
+				<hr>
+			</div>
+			{{/post}}
+		</article>
+		<div class="navigation">
+			<nav class="pagination" role="pagination">
+				<span class="back"  onclick="history.back(-1)" >← Back</a>
+			</nav>
+		</div>
+
+	</section>

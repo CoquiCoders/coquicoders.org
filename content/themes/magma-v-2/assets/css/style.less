@@ -1,0 +1,498 @@
+/**********************************************************************************
+		 		Reset Style 
+**********************************************************************************/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+/*ol, ul {
+	list-style: none;
+}*/
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+input {
+	outline: none;
+}
+* {
+	box-sizing:border-box;
+-moz-box-sizing:border-box;
+}
+* {
+	-webkit-transition: all .4s ease-in-out;
+	   -moz-transition: all .4s ease-in-out;
+	    -ms-transition: all .4s ease-in-out;
+	     -o-transition: all .4s ease-in-out;
+	        transition: all .4s ease-in-out;
+	}
+
+
+/**********************************************************************************
+		 		VARIABLES FOR LESS 
+**********************************************************************************/
+@base-color: #ff541f;
+@white: #fff;
+@dark-color: #222;
+@text-color: #5a5a5a;
+@shadow-color: #e9e9e9;
+@background-color: #E0E0E0;
+
+/**********************************************************************************
+		 		GENERAL STYLE 
+**********************************************************************************/
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.2rem;
+	color: @text-color;
+}
+::-moz-selection {
+    color: #FFF;
+    background: @base-color;
+    text-shadow: none;
+}
+
+::selection {
+    color: #FFF;
+    background: @base-color;
+    text-shadow: none;
+}
+h1,h2,h3,h4,h5 {
+	font-weight: 700;
+	line-height: 1.2em;
+}
+h1 {
+	font-size: 3rem;
+}
+h2 {
+	font-size: 2.2rem;
+}
+h3 {
+	font-size: 1.8rem;
+}
+h4 {
+	font-size: 1.5rem;
+}
+h5 {
+	font-size: 1.3rem;
+}
+a {
+	color: @base-color;
+	text-decoration: none;
+		&:hover {
+			color: @text-color;
+		}
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid lighten(@text-color, 50%);
+    margin: 1em 0;
+    padding: 0;
+}
+
+ol ol, ul ul,
+ul ol, ol ul {
+    margin: 0.4em 0;
+}
+
+li {
+	margin-left: 3rem;
+}
+
+blockquote {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 1.6em 0;
+	padding: 0 3rem;
+	border: 1px solid lighten(@base-color, 30%);
+	background: lighten(@base-color, 40%);
+	color: @base-color;
+	font-weight: 700;
+	border-radius: 3px;
+}
+
+blockquote p {
+    margin: 0.8em 0;
+    font-style: italic;
+}
+
+blockquote small {
+    display: inline-block;
+    margin: 0.8em 0 0.8em 1.5em;;
+    font-size:0.9em;
+    color: #ccc;
+}
+
+blockquote small:before { content: '\2014 \00A0'; }
+
+blockquote cite {
+    font-weight:bold;
+}
+
+blockquote cite a { font-weight: normal; }
+dl {
+    margin: 1.6em 0;
+}
+
+dl dt {
+    float: left;
+    width: 180px;
+    overflow: hidden;
+    clear: left;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: bold;
+    margin-bottom: 1em
+}
+
+code, tt {
+    padding: 1px 3px;
+    font-family: monospace, sans-serif;
+    font-size: 1rem;
+    white-space: pre;
+    border: 1px solid lighten(@base-color, 30%);
+    background: lighten(@base-color, 40%);
+    border-radius: 2px;
+}
+
+pre {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 1.6em 0;
+    border: 1px solid lighten(@base-color, 30%);
+    width: 100%;
+    padding: 10px;
+    font-family: monospace, sans-serif;
+    font-size: 1rem;
+    white-space: pre;
+    overflow: auto;
+    background: lighten(@base-color, 40%);
+    border-radius: 3px;
+}
+
+pre code, tt {
+    font-size: inherit;
+    white-space: -moz-pre-wrap;
+    white-space: pre-wrap;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+input[type="text"], input[type="email"], input[type="password"] {
+	padding: .6rem;
+	margin: .6rem 0;
+	font-size: 1.2rem;
+	color: @base-color;
+}
+/**********************************************************************************
+		 		HEADER STYLES 
+**********************************************************************************/
+header {
+	background: @base-color;
+	width: 30%;
+	height: 100%;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+	padding: 30px 0px 0px 0px;
+	color: @white;
+		.site-head {
+			border-bottom: 1px dotted @white;
+				.blog-title {
+					margin: -5px 0 -5px 0;
+				a {
+					color: @white;
+				}
+			
+		}
+		.blog-tagline {
+			font-size: 1.6rem;
+			margin: 10px 0 10px 0;
+		}
+		}
+		
+		nav {
+			margin: 10px 0;
+				a {
+					color: @white;
+					margin: 0 3px;
+					text-transform: uppercase;
+					font-size: 1em;
+						&:hover {
+							color: @white;
+						}
+				}
+		}
+}
+
+/**********************************************************************************
+		 		MAIN CONTENT AREA STYLES 
+**********************************************************************************/
+.main-section {
+	padding: 0 0 0 30%;
+}
+.feature-media {
+	width: 100%;
+		p {
+			margin: 0;
+			padding: 0;
+		}
+		img {
+			width: 100%;
+		}
+}
+.post-content {
+	width: 80%;
+	margin: 40px auto;
+		.post-meta {
+			background: @base-color;
+			color: @white;
+			padding: 3px 10px;
+			margin: 0 10px 0 0;
+			position: relative;
+		}
+		p {
+			margin: 16px 0;
+		}
+		hr {
+			margin: 20px 0 0 0;
+		}
+		img {
+			width: 100%;
+		}
+}
+.disqus-container {
+	width: 80%;
+	margin: 40px auto;
+	padding: 20px;
+	background: lighten(@text-color, 60%);
+}
+.navigation {
+	background: @dark-color;
+		.pagination {
+			width: 80%;
+
+			text-align: center;
+			margin: 0 auto;
+			padding: 32px 0;
+			position: relative;
+				.newer-posts {
+					position: absolute;
+					left: 0;
+				}
+				.older-posts {
+					position: absolute;
+					right: 0;
+				}
+				.newer-posts, .older-posts, .back {
+					color: @text-color;
+						&:hover {
+							color: @base-color;
+						}
+				}
+				.back {
+					cursor: pointer;
+				}
+		}
+}
+
+/* single post specific style **************************************************/
+.post-title {
+	color: @base-color;
+}
+.post-footer {
+	width: 80%;
+	margin: 0 auto 30px;
+	display: table;
+	clear:both;
+}
+.author {
+	background: @base-color;
+	min-height: 100px;
+	color: @white;
+	padding: 10px;
+		img {
+			float: left;
+			margin: 0 20px 0 0;
+			width: 80px;
+			height: 80px;
+		}
+		p {
+			font-size: .8rem;
+		}
+}
+.share {
+	background: @dark-color;
+	padding: 3px;
+	text-align: center;
+	font-size: .8rem;
+		a {
+			border : 1px solid @text-color;
+		 	padding: 3px 5px;
+		 	margin: 0px 4px;
+		 	line-height: 2rem;
+		 	color : @text-color;
+		 		&:hover {
+		 			color: @white;
+		 			background: @base-color;
+		 			border: 1px solid @base-color;
+		 		}
+		}
+}
+
+/**********************************************************************************
+		 		FOOTER AREA STYLE 
+**********************************************************************************/
+.site-footer {
+	background: @dark-color;
+	width: 30%;
+	height: auto;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	text-align: center;
+	padding: 10px 0;
+	color: @white;
+	font-size: .8rem;
+	 a {
+	 	color:@text-color;
+	 	text-decoration: none;
+	 		&:hover {
+	 			color: @base-color;
+	 		}
+	 }
+	 .social {
+	 	margin: 10px 0px;
+		 	.facebook, .twitter, .google, .rss {
+		 	border : 1px solid @text-color;
+		 	padding: 3px 5px;
+		 	margin: 0px 4px;
+		 	line-height: 2rem;
+		 	color : text-color;
+		 		&:hover {
+		 			color: @white;
+		 			background: @base-color;
+		 			border: 1px solid @base-color;
+		 		}
+		 }
+	 }
+
+}
+
+/**********************************************************************************
+		 		fade in effect 
+**********************************************************************************/
+@-webkit-keyframes fadeIn {
+from {
+opacity:0;
+}
+to {
+	opacity:1;
+}
+}
+@-moz-keyframes fadeIn {
+from {
+opacity:0;
+}
+to {
+	opacity:1;
+}
+}
+@keyframes fadeIn {
+from {
+opacity:0;
+}
+to {
+	opacity:1;
+}
+}
+.fade-in {
+	opacity:0;
+	-webkit-animation:fadeIn ease-in-out 1;
+	-moz-animation:fadeIn ease-in-out 1;
+	animation:fadeIn ease-in-out 1;
+	-webkit-animation-duration:0.3s;
+	-moz-animation-duration:0.3s;
+	animation-duration:0.3s;
+	-webkit-animation-fill-mode:forwards;
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+}
+.fade-in.pagecontent {
+	-webkit-animation-delay: 0.4s;
+	-moz-animation-delay: 0.4s;
+	animation-delay: 0.4s;
+}
+
+
+/**********************************************************************************
+		 		DEVICE RESPONSIVE 
+**********************************************************************************/
+@media only screen and (max-width: 900px ) {
+	header {
+		width: 100%;
+		height: auto;
+		position: relative;
+		margin-bottom: 2px;
+		padding-bottom: 1px;
+			.blog-tagline {
+				border-bottom: none;
+			}
+	}
+	.main-section {
+		padding: 0;
+	}
+	.site-footer {
+		width: 100%;
+		position: relative;
+	}
+}
+@media only screen and (max-width: 480px ) {
+
+	.navigation {
+		.pagination {
+			.newer-posts, .older-posts {
+				position: relative;
+				display: block;
+
+			}
+		} 
+	}
+}
