@@ -2,8 +2,8 @@ header {
 	background: #cccccc;
 }
 
-@media (max-width: 1200px and min-width: 900px) {
+/*@media (max-width: 1200px and min-width: 900px) {*/
 	.site-head img {
 		width: 100%;
 	}
-}
+/*}*/
